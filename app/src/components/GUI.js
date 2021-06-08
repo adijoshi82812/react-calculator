@@ -16,6 +16,10 @@ class GUI extends Component{
         }
     };
 
+    clearbar = () => {
+        this.setState({ answerBar: "0" });
+    };
+
     render(){
         return(
             <main
@@ -46,6 +50,7 @@ class GUI extends Component{
                             <button
                                 type="button"
                                 className="w3-button w3-text-orange w3-hover-white w3-round button-width"
+                                onClick={this.clearbar}
                             >
                                 C
                             </button>
