@@ -1,6 +1,21 @@
 import React, { Component } from 'react';
 
 class GUI extends Component{
+    constructor(){
+        super();
+        this.state = {
+            answerBar: "0",
+        };
+    }
+
+    handleButtonClick = (butt) => {
+        if(this.state.answerBar === '0' && butt !== '.'){
+            this.setState({ answerBar: butt });
+        }else{
+            this.setState({ answerBar: this.state.answerBar + butt });
+        }
+    };
+
     render(){
         return(
             <main
@@ -17,7 +32,7 @@ class GUI extends Component{
                         >
                             <input
                                 type="text"
-                                value="0"
+                                value={this.state.answerBar}
                                 className="w3-input w3-border w3-round"
                                 style={{ textAlign: "right" }}
                                 readOnly
@@ -47,6 +62,7 @@ class GUI extends Component{
                             <button
                                 type="button"
                                 className="w3-button w3-text-orange w3-hover-white w3-round button-width"
+                                onClick={() => this.handleButtonClick("%")}
                             >
                                 %
                             </button>
@@ -55,6 +71,7 @@ class GUI extends Component{
                             <button
                                 type="button"
                                 className="w3-button w3-text-orange w3-hover-white w3-round button-width"
+                                onClick={() => this.handleButtonClick("/")}
                             >
                                 /
                             </button>
@@ -67,6 +84,7 @@ class GUI extends Component{
                             <button
                                 type="button"
                                 className="w3-button w3-black w3-round button-width"
+                                onClick={() => this.handleButtonClick("7")}
                             >
                                 7
                             </button>
@@ -75,6 +93,7 @@ class GUI extends Component{
                             <button
                                 type="button"
                                 className="w3-button w3-black w3-round button-width"
+                                onClick={() => this.handleButtonClick("8")}
                             >
                                 8
                             </button>
@@ -83,6 +102,7 @@ class GUI extends Component{
                             <button
                                 type="button"
                                 className="w3-button w3-black w3-round button-width"
+                                onClick={() => this.handleButtonClick("9")}
                             >
                                 9
                             </button>
@@ -91,6 +111,7 @@ class GUI extends Component{
                             <button
                                 type="button"
                                 className="w3-button w3-text-orange w3-hover-white w3-round button-width"
+                                onClick={() => this.handleButtonClick("x")}
                             >
                                 x
                             </button>
@@ -103,6 +124,7 @@ class GUI extends Component{
                             <button
                                 type="button"
                                 className="w3-button w3-black w3-round button-width"
+                                onClick={() => this.handleButtonClick("4")}
                             >
                                 4
                             </button>
@@ -111,6 +133,7 @@ class GUI extends Component{
                             <button
                                 type="button"
                                 className="w3-button w3-black w3-round button-width"
+                                onClick={() => this.handleButtonClick("5")}
                             >
                                 5
                             </button>
@@ -119,6 +142,7 @@ class GUI extends Component{
                             <button
                                 type="button"
                                 className="w3-button w3-black w3-round button-width"
+                                onClick={() => this.handleButtonClick("6")}
                             >
                                 6
                             </button>
@@ -127,6 +151,7 @@ class GUI extends Component{
                             <button
                                 type="button"
                                 className="w3-button w3-text-orange w3-hover-white w3-round button-width"
+                                onClick={() => this.handleButtonClick("-")}
                             >
                                 -
                             </button>
@@ -139,6 +164,7 @@ class GUI extends Component{
                             <button
                                 type="button"
                                 className="w3-button w3-black w3-round button-width"
+                                onClick={() => this.handleButtonClick("1")}
                             >
                                 1
                             </button>
@@ -147,6 +173,7 @@ class GUI extends Component{
                             <button
                                 type="button"
                                 className="w3-button w3-black w3-round button-width"
+                                onClick={() => this.handleButtonClick("2")}
                             >
                                 2
                             </button>
@@ -155,6 +182,7 @@ class GUI extends Component{
                             <button
                                 type="button"
                                 className="w3-button w3-black w3-round button-width"
+                                onClick={() => this.handleButtonClick("3")}
                             >
                                 3
                             </button>
@@ -163,6 +191,7 @@ class GUI extends Component{
                             <button
                                 type="button"
                                 className="w3-button w3-text-orange w3-hover-white w3-round button-width"
+                                onClick={() => this.handleButtonClick("+")}
                             >
                                 +
                             </button>
@@ -177,6 +206,7 @@ class GUI extends Component{
                             <button
                                 type="button"
                                 className="w3-button w3-black w3-round full-width"
+                                onClick={() => this.handleButtonClick("0")}
                             >
                                 0
                             </button>
@@ -185,6 +215,7 @@ class GUI extends Component{
                             <button
                                 type="button"
                                 className="w3-button w3-black w3-round button-width"
+                                onClick={() => this.handleButtonClick(".")}
                             >
                                 .
                             </button>
