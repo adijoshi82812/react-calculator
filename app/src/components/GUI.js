@@ -21,13 +21,56 @@ class GUI extends Component{
     };
 
     handleBack = () => {
-        if(this.state.answerBar.length <= 1){
+        if(this.state.answerBar.length <= 1 || typeof this.state.answerBar !== 'string'){
             this.clearbar();
         }else{
             const value = this.state.answerBar;
             let newvalue;
             newvalue = value.slice(0, -1);
             this.setState({ answerBar: newvalue });
+        }
+    };
+
+    handleAnswer = () => {
+        let num1 = "", num2 = "", operator;
+        const value = this.state.answerBar;
+        for(let i = 0; i < value.length; i++){
+            if(value[i] === "+" || value[i] === "-" || value[i] === "x" || value[i] === "/" || value[i] === "%"){
+                for(let j = 0; j < i; j++){
+                    num1 += value [j];
+                }
+                
+                operator = value[i];
+
+                for(let j = i+1; j < value.length; j++){
+                    num2 += value[j];
+                }
+                break;
+            }
+        }
+
+        num1 = parseFloat(num1);
+        num2 = parseFloat(num2);
+
+        switch(operator){
+            case "+":
+                this.setState({ answerBar: num1 + num2 });
+                break;
+            case "-":
+                this.setState({ answerBar: num1 - num2 });
+                break;
+            case "x":
+                this.setState({ answerBar: num1 * num2 });
+                break;
+            case "/":
+                this.setState({ answerBar: num1 / num2 });
+                break;
+            case "%":
+                this.setState({ answerBar: num1 % num2 });
+                break;
+            default:
+                this.setState({ answerBar: "Something went wrong" });
+                break;
         }
     };
 
@@ -241,6 +284,7 @@ class GUI extends Component{
                             <button
                                 type="button"
                                 className="w3-button w3-text-orange w3-hover-white w3-round button-width"
+                                onClick={this.handleAnswer}
                             >
                                 =
                             </button>
