@@ -20,6 +20,17 @@ class GUI extends Component{
         this.setState({ answerBar: "0" });
     };
 
+    handleBack = () => {
+        if(this.state.answerBar.length <= 1){
+            this.clearbar();
+        }else{
+            const value = this.state.answerBar;
+            let newvalue;
+            newvalue = value.slice(0, -1);
+            this.setState({ answerBar: newvalue });
+        }
+    };
+
     render(){
         return(
             <main
@@ -59,6 +70,7 @@ class GUI extends Component{
                             <button
                                 type="button"
                                 className="w3-button w3-text-orange w3-hover-white w3-round button-width"
+                                onClick={this.handleBack}
                             >
                                 B
                             </button>
