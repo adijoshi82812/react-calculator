@@ -10,7 +10,7 @@ Step 3: Install CRA depencies using terminal.
 ### Usage
 Open http://localhost:8000/ in your browser window. \
 Now you will see the GUI, start making calulations. \
-**Note** : This is a Simple calculator which can handle only two inputs at a time.
+**Note** : This is a Simple calculator which can handle only two inputs at a time. \
 **Also Note** : I Have deleted the css library, if you want the same output just add w3.css framework from https://www.w3schools.com/w3css/4/w3.css
 
 ### To modify
