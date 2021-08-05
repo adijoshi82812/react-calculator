@@ -34,6 +34,8 @@ Start the server
 ```bash
   npm start
 ```
+
+**Note** : Download w3.css framework from https://www.w3schools.com/w3css/4/w3.css and add it inside the frontend/src directory.
 ## Screenshots
 
 ![App ScreenShot](https://raw.githubusercontent.com/adijoshi82812/react-calculator/main/screenshots/app.png)
